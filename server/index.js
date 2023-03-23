@@ -11,7 +11,7 @@ const path = require('path');
 //   cert: fs.readFileSync(process.env.SSL_CRT_FILE)
 // };
 // const https = require('https').createServer(options,app);
-const io = require('socket.io')(https);
+const io = require('socket.io')(http);
 const PORT = process.env.PORT || 8000;
 
 let socketList = {};
