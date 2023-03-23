@@ -3,10 +3,12 @@ const app = express();
 // const http = require('http').createServer(app);
 const fs = require('fs');
 const { hostname } = require('os');
+const dotenv = require('dotenv');
+dotenv.config();
 const path = require('path');
 const options = {
-  key: fs.readFileSync('cert/key.pem'),
-  cert: fs.readFileSync('cert/cert.pem')
+  key: fs.readFileSync(process.env.SSL_KEY_FILE),
+  cert: fs.readFileSync(process.env.SSL_CRT_FILE)
 };
 const https = require('https').createServer(options,app);
 const io = require('socket.io')(https);

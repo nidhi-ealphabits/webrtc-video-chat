@@ -17,7 +17,7 @@ const Main = (props) => {
         const userName = userRef.current.value;
 
         sessionStorage.setItem('user', userName);
-        props.history.push(`/room/${roomName}`);
+        props.history.push(`/${roomName}`);
       } else {
         setErr(error);
         setErrMsg('User name already exist');
